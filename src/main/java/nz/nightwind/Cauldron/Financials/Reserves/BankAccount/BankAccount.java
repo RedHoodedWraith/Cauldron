@@ -1,6 +1,8 @@
-package nz.nightwind.Cauldron.Financials.Reserves;
+package nz.nightwind.Cauldron.Financials.Reserves.BankAccount;
 
 import nz.nightwind.Cauldron.Financials.Currencies.CurrencyType;
+import nz.nightwind.Cauldron.Financials.Reserves.BankAccount.Number.BankAccountNumber;
+import nz.nightwind.Cauldron.Financials.Reserves.Reserve;
 
 public abstract class BankAccount<B extends BankAccountNumber> extends Reserve {
 
