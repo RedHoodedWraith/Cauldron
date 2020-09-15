@@ -1,8 +1,9 @@
 package nz.nightwind.Cauldron.Financials.Transactions;
 
 import nz.nightwind.Cauldron.Financials.Currencies.CurrencyType;
+import nz.nightwind.Cauldron.Financials.Reserves.Reserve;
 
-public abstract class Transaction<I,O>{
+public class Transaction<I extends Reserve,O extends Reserve>{
 
     private final O sending_party;
     private final I receiving_party;

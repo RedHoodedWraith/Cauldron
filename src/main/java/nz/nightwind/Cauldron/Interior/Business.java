@@ -1,10 +1,11 @@
-package nz.nightwind.Cauldron.Business;
+package nz.nightwind.Cauldron.Interior;
 
+import nz.nightwind.Cauldron.Entity;
 import nz.nightwind.Cauldron.Financials.Reserves.Reserve;
 
 import java.util.HashMap;
 
-public abstract class Business {
+public abstract class Business implements Entity {
     private String name;
     private HashMap<String, Reserve> reserves = new HashMap<>();
 

@@ -5,7 +5,7 @@ import nz.nightwind.Cauldron.Financials.Currencies.CurrencyType;
 public abstract class Reserve {
     private String name;
     private final CurrencyType currency;
-    private int balance;
+    private int balance = 0;
 
     public String getName() {
         return name;

@@ -1,4 +1,4 @@
-package nz.nightwind.Cauldron.Business;
+package nz.nightwind.Cauldron.Interior;
 
 public abstract class AbstractCompany extends Business {
 
