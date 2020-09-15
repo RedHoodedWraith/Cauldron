@@ -16,19 +16,19 @@ public abstract class Transaction<I,O>{
         this.amount_transferred = amount_transferred;
     }
 
-    public O getSending_party() {
+    public O getSendingParty() {
         return sending_party;
     }
 
-    public I getReceiving_party() {
+    public I getReceivingParty() {
         return receiving_party;
     }
 
-    public CurrencyType getCurrency_of_payment() {
+    public CurrencyType getCurrencyUsed() {
         return currency_of_payment;
     }
 
-    public int getAmount_transferred() {
+    public int getAmountTransferred() {
         return amount_transferred;
     }
 }
