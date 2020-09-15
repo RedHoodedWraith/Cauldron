@@ -19,7 +19,23 @@ public abstract class Reserve {
         this.name = name;
     }
 
-    public abstract boolean updateBalance(int change_amt);
+    protected boolean updateBalance(int new_balance){
+        boolean safety_check = checkAllowedBalance(new_balance);
+        this.balance = safety_check ? new_balance : this.balance;
+        return safety_check;
+    }
+
+    public boolean addFunds(int funds){
+        return updateBalance(getBalance() + funds);
+    }
+
+    public boolean subtractFunds(int funds){
+        return updateBalance(getBalance() - funds);
+    }
+
+    public boolean checkAllowedBalance(int new_balance){
+        return true;
+    }
 
     public Reserve(String name, CurrencyType currency) {
         this.name = name;
