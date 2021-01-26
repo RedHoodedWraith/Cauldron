@@ -1,11 +1,12 @@
 package nz.nightwind.Cauldron.Financials.Reserves.BankAccount;
 
-import nz.nightwind.Cauldron.Financials.Currencies.CurrencyType;
 import nz.nightwind.Cauldron.Financials.Reserves.BankAccount.Number.GenericBankAccountNumber;
+
+import java.util.Currency;
 
 public class GenericBankAccount extends BankAccount<GenericBankAccountNumber> {
 
-    public GenericBankAccount(String name, CurrencyType currency, GenericBankAccountNumber accountNumber) {
+    public GenericBankAccount(String name, Currency currency, GenericBankAccountNumber accountNumber) {
         super(name, currency, accountNumber);
     }
 
@@ -25,7 +26,7 @@ public class GenericBankAccount extends BankAccount<GenericBankAccountNumber> {
     }
 
     @Override
-    public CurrencyType getCurrency() {
+    public Currency getCurrency() {
         return super.getCurrency();
     }
 

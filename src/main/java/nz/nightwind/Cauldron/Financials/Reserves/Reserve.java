@@ -1,17 +1,17 @@
 package nz.nightwind.Cauldron.Financials.Reserves;
 
-import nz.nightwind.Cauldron.Financials.Currencies.CurrencyType;
+import java.util.Currency;
 
 public abstract class Reserve {
     private String name;
-    private final CurrencyType currency;
+    private final Currency currency;
     private int balance = 0;
 
     public String getName() {
         return name;
     }
 
-    public CurrencyType getCurrency() {
+    public Currency getCurrency() {
         return currency;
     }
 
@@ -37,7 +37,7 @@ public abstract class Reserve {
         return true;
     }
 
-    public Reserve(String name, CurrencyType currency) {
+    public Reserve(String name, Currency currency) {
         this.name = name;
         this.currency = currency;
     }

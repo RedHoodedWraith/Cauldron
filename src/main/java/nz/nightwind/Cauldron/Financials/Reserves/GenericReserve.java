@@ -1,6 +1,7 @@
 package nz.nightwind.Cauldron.Financials.Reserves;
 
-import nz.nightwind.Cauldron.Financials.Currencies.CurrencyType;
+
+import java.util.Currency;
 
 public class GenericReserve extends Reserve {
     @Override
@@ -9,7 +10,7 @@ public class GenericReserve extends Reserve {
     }
 
     @Override
-    public CurrencyType getCurrency() {
+    public Currency getCurrency() {
         return super.getCurrency();
     }
 
@@ -38,7 +39,7 @@ public class GenericReserve extends Reserve {
         return super.checkAllowedBalance(new_balance);
     }
 
-    public GenericReserve(String name, CurrencyType currency) {
+    public GenericReserve(String name, Currency currency) {
         super(name, currency);
     }
 
