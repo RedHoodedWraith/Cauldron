@@ -13,6 +13,10 @@ public abstract class Business implements Entity {
         this.name = name;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
     public Reserve getReserve(String name){
         return reserves.get(name);
     }
@@ -32,5 +36,25 @@ public abstract class Business implements Entity {
 
     public Reserve removeReserve(String nameOfReserve){
         return reserves.remove(nameOfReserve);
+    }
+
+    public String getSummary(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Company Name: ")
+        .append(this.getName())
+        .append("\n");
+
+        for(Reserve r : reserves.values()){
+            sb.append("\t")
+            .append(r.getName())
+            .append(" : ")
+            .append(r.getCurrency().getCurrencyCode())
+            .append(" ")
+            .append(r.getBalance())
+            .append("\n");
+        }
+
+        return sb.toString();
     }
 }

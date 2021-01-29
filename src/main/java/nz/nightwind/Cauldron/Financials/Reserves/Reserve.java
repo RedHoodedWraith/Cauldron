@@ -5,7 +5,7 @@ import java.util.Currency;
 public abstract class Reserve {
     private String name;
     private final Currency currency;
-    private int balance = 0;
+    private double balance = 0;
 
     public String getName() {
         return name;
@@ -19,21 +19,21 @@ public abstract class Reserve {
         this.name = name;
     }
 
-    protected boolean updateBalance(int new_balance){
+    protected boolean updateBalance(double new_balance){
         boolean safety_check = checkAllowedBalance(new_balance);
         this.balance = safety_check ? new_balance : this.balance;
         return safety_check;
     }
 
-    public boolean addFunds(int funds){
+    public boolean addFunds(double funds){
         return updateBalance(getBalance() + funds);
     }
 
-    public boolean subtractFunds(int funds){
+    public boolean subtractFunds(double funds){
         return updateBalance(getBalance() - funds);
     }
 
-    public boolean checkAllowedBalance(int new_balance){
+    public boolean checkAllowedBalance(double new_balance){
         return true;
     }
 
@@ -42,7 +42,7 @@ public abstract class Reserve {
         this.currency = currency;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 }

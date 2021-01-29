@@ -35,7 +35,7 @@ public class NZBankAccount extends BankAccount<NZBankAccountNumber> {
     }
 
     @Override
-    public int getBalance() {
+    public double getBalance() {
         return super.getBalance();
     }
 }

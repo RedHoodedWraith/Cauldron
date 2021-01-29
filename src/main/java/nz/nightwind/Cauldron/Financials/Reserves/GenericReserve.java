@@ -4,6 +4,12 @@ package nz.nightwind.Cauldron.Financials.Reserves;
 import java.util.Currency;
 
 public class GenericReserve extends Reserve {
+
+    public GenericReserve(String name, Currency currency)
+    {
+        super(name, currency);
+    }
+
     @Override
     public String getName() {
         return super.getName();
@@ -20,31 +26,27 @@ public class GenericReserve extends Reserve {
     }
 
     @Override
-    protected boolean updateBalance(int new_balance) {
+    protected boolean updateBalance(double new_balance) {
         return super.updateBalance(new_balance);
     }
 
     @Override
-    public boolean addFunds(int funds) {
+    public boolean addFunds(double funds) {
         return super.addFunds(funds);
     }
 
     @Override
-    public boolean subtractFunds(int funds) {
+    public boolean subtractFunds(double funds) {
         return super.subtractFunds(funds);
     }
 
     @Override
-    public boolean checkAllowedBalance(int new_balance) {
+    public boolean checkAllowedBalance(double new_balance) {
         return super.checkAllowedBalance(new_balance);
     }
 
-    public GenericReserve(String name, Currency currency) {
-        super(name, currency);
-    }
-
     @Override
-    public int getBalance() {
+    public double getBalance() {
         return super.getBalance();
     }
 }
