@@ -1,19 +1,29 @@
-package nz.nightwind.Cauldron.Interior;
+package nz.nightwind.Cauldron.Entities.Interior;
 
-import nz.nightwind.Cauldron.Entity;
+import nz.nightwind.Cauldron.Entities.Entity;
 import nz.nightwind.Cauldron.Financials.Reserves.Reserve;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
+@Component
 public abstract class Business implements Entity {
     private String name;
     private HashMap<String, Reserve> reserves = new HashMap<>();
+
+    public Business() {
+    }
 
     public Business(String name) {
         this.name = name;
     }
 
     public String getName(){
+
+        if(this.name == null || this.name.isEmpty()){
+            return "";
+        }
+
         return this.name;
     }
 

@@ -3,8 +3,8 @@ package nz.nightwind.Cauldron;
 import nz.nightwind.Cauldron.Financials.Reserves.GenericReserve;
 import nz.nightwind.Cauldron.Financials.Reserves.Reserve;
 import nz.nightwind.Cauldron.Financials.Transactions.Transaction;
-import nz.nightwind.Cauldron.Interior.AbstractCompany;
-import nz.nightwind.Cauldron.Interior.LimitedCompany;
+import nz.nightwind.Cauldron.Entities.Interior.AbstractCompany;
+import nz.nightwind.Cauldron.Entities.Interior.LimitedCompany;
 import org.junit.Test;
 
 import java.util.ArrayList;
