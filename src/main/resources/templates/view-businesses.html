@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Businesses</title>
+</head>
+<body>
+
+<h1>Local Businesses</h1>
+
+<ol th:each="b : ${businesses}">
+    <li th:text="${b.getName()}"></li>
+</ol>
+
+</body>
+</html>
