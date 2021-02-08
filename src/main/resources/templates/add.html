@@ -10,7 +10,12 @@
 <h1>New Entity</h1>
 
 <form action="#" th:action="@{/add}" th:object="${entity}" method="post">
-    <p>Entity Name: <input type="text" th:field="*{name}"></p>
+    <p>Entity Name: <input type="text" th:field="*{name}" th:required="true"></p>
+    <select th:field="*{businessType}" th:required="true">
+        <option value=""> --- </option>
+        <option th:each="businessType : ${T(nz.nightwind.Cauldron.Entities.BusinessTypes).values()}"
+                th:value="${businessType}" th:text="${businessType.getLabel()}"></option>
+    </select>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 

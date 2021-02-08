@@ -12,10 +12,6 @@ public class GreetingController {
     @GetMapping("/greeting")
     public String greetingForm(Model model) {
         model.addAttribute("greeting", new Greeting());
-        Greeting g = (Greeting) model.getAttribute("greeting");
-
-        assert g != null;
-        System.out.println("Greeting Added: " + g.getContent());
 
         return "greeting";
     }

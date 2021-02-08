@@ -6,10 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
-@Component
 public abstract class Business implements Entity {
     private String name;
-    private HashMap<String, Reserve> reserves = new HashMap<>();
+    private final HashMap<String, Reserve> reserves = new HashMap<>();
 
     public Business() {
     }
