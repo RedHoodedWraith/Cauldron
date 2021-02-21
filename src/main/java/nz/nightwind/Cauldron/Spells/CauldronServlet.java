@@ -1,4 +1,4 @@
-package nz.nightwind.Cauldron;
+package nz.nightwind.Cauldron.Spells;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
