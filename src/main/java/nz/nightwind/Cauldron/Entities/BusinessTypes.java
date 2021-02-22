@@ -1,10 +1,12 @@
 package nz.nightwind.Cauldron.Entities;
 
+import static nz.nightwind.Cauldron.Entities.Entity.*;
+
 public enum BusinessTypes {
-    LimitedCompany("Limited Company"),
-    UnlimitedCompany("Unlimited Company"),
-    Partnership("Partnership"),
-    SoleTrader("Sole Trader");
+    LimitedCompany(LIMITED_COMPANY),
+    UnlimitedCompany(UNLIMITED_COMPANY),
+    Partnership(PARTNERSHIP),
+    SoleTrader(SOLE_TRADER);
 
     private final String label;
 

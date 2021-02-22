@@ -26,9 +26,10 @@ public class EntityController {
         model.addAttribute("ent", entity);
 
         System.out.println("\nAdded Entity Name: " + entity.getName());
+        System.out.println("Business Type: " + entity.getBusinessType());
 
         try{
-            EntityDatabase.addFormToQueue(entity);
+            EntityDatabase.addNewBusiness(entity);
         } catch (ClassCastException e){
            throw new ObjectMissingComparator(e);
         }

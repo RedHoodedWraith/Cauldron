@@ -5,10 +5,12 @@ import nz.nightwind.Cauldron.Entities.Exceptions.UnsupportedEntity;
 import nz.nightwind.Cauldron.Entities.Interior.Business;
 import nz.nightwind.Cauldron.Entities.Interior.LimitedCompany;
 
+import static nz.nightwind.Cauldron.Entities.Entity.*;
+
 public class BusinessEntityForm implements Comparable<BusinessEntityForm> {
 
     private String name;
-    private BusinessTypes business_type;
+    private String businessType;
 
     public String getName() {
         return name;
@@ -19,18 +21,25 @@ public class BusinessEntityForm implements Comparable<BusinessEntityForm> {
     }
 
 
-    public BusinessTypes getBusinessType() {
-        return business_type;
+    public String getBusinessType() {
+        return businessType;
     }
 
-    public void setBusiness_type(BusinessTypes business_type) {
-        this.business_type = business_type;
+    public void setBusinessType(String businessType) {
+        this.businessType = businessType;
     }
 
     public Business generate() throws UnsupportedEntity {
+        if(getBusinessType() == null){
+            throw new NullPointerException("Business Type is Null");
+        }
+
         switch (getBusinessType()){
-            case LimitedCompany:
+            case LIMITED_COMPANY:
                 return new LimitedCompany(getName());
+            case UNLIMITED_COMPANY:
+            case PARTNERSHIP:
+            case SOLE_TRADER:
             default:
                 throw new UnsupportedEntity(getBusinessType());
         }

@@ -19,6 +19,7 @@ public class EntityDatabase {
 
     public static void addFormToQueue(BusinessEntityForm form){
         formsQueue.add(form);
+        //addNewBusiness(form);
     }
 
     public Business getLastAddedBusiness(){
@@ -35,16 +36,18 @@ public class EntityDatabase {
         while(!formsQueue.isEmpty() && addNewBusiness(formsQueue.poll())){
             entity = getLastAddedBusiness();
         }
-
         return CompletableFuture.completedFuture(entity);
     }
 
-    public boolean addNewBusiness(BusinessEntityForm form){
+    public static boolean addNewBusiness(BusinessEntityForm form){
+        if(form == null){
+            throw new NullPointerException("Form Object is Null");
+        }
         int preSize = internalBusinesses.size();
         return addNewBusinessReturnID(form) > preSize;
     }
 
-    public int addNewBusinessReturnID(BusinessEntityForm form){
+    public static int addNewBusinessReturnID(BusinessEntityForm form){
         try {
             if(form != null && internalBusinesses.add(form.generate())){
                 return internalBusinesses.size()-1;
