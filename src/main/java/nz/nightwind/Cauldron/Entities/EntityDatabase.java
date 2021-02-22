@@ -2,7 +2,7 @@ package nz.nightwind.Cauldron.Entities;
 
 import nz.nightwind.Cauldron.Entities.Exceptions.UnsupportedEntity;
 import nz.nightwind.Cauldron.Entities.Interior.Business;
-import nz.nightwind.Cauldron.WebControllers.BusinessEntityForm;
+import nz.nightwind.Cauldron.WebApp.BusinessEntityForm;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 

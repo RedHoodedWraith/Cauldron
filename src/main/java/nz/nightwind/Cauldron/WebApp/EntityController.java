@@ -1,4 +1,4 @@
-package nz.nightwind.Cauldron.WebControllers;
+package nz.nightwind.Cauldron.WebApp;
 
 import nz.nightwind.Cauldron.Entities.EntityDatabase;
 import nz.nightwind.Cauldron.Entities.Exceptions.ObjectMissingComparator;
@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package nz.nightwind.Cauldron.WebControllers;
+package nz.nightwind.Cauldron.WebApp;
 
 import nz.nightwind.Cauldron.Entities.BusinessTypes;
 import nz.nightwind.Cauldron.Entities.Exceptions.UnsupportedEntity;

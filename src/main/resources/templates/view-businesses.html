@@ -9,6 +9,11 @@
 
 <h1>Local Businesses</h1>
 
+<form action="/">
+    <p><input type="submit" value="Home" />
+    </p>
+</form>
+
 <ol th:each="b : ${businesses}">
     <li th:text="${b.getName()}"></li>
 </ol>
