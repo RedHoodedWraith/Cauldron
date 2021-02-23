@@ -14,7 +14,7 @@
     <select th:field="*{businessType}" th:required="true">
         <option value=""> --- </option>
         <option th:each="businessType : ${T(nz.nightwind.Cauldron.Entities.BusinessTypes).values()}"
-                th:value="${businessType}" th:text="${businessType.getLabel()}"></option>
+                th:value="${businessType.getLabel()}" th:text="${businessType.getLabel()}"></option>
     </select>
     <p><input type="submit" value="Submit" />
         <input type="reset" value="Reset" />

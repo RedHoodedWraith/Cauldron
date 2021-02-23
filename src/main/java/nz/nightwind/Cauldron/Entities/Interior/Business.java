@@ -1,5 +1,6 @@
 package nz.nightwind.Cauldron.Entities.Interior;
 
+import nz.nightwind.Cauldron.Entities.BusinessTypes;
 import nz.nightwind.Cauldron.Entities.Entity;
 import nz.nightwind.Cauldron.Financials.Reserves.Reserve;
 import org.springframework.stereotype.Component;
@@ -7,14 +8,18 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 public abstract class Business implements Entity {
+
+    private final BusinessTypes businessType;
     private String name;
     private final HashMap<String, Reserve> reserves = new HashMap<>();
 
-    public Business() {
+    public Business(BusinessTypes businessType) {
+        this.businessType = businessType;
     }
 
-    public Business(String name) {
+    public Business(String name, BusinessTypes businessType) {
         this.name = name;
+        this.businessType = businessType;
     }
 
     public String getName(){
@@ -65,5 +70,9 @@ public abstract class Business implements Entity {
         }
 
         return sb.toString();
+    }
+
+    public BusinessTypes getBusinessType() {
+        return businessType;
     }
 }

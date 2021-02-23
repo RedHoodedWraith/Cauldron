@@ -1,6 +1,7 @@
 package nz.nightwind.Cauldron.WebApp;
 
 import nz.nightwind.Cauldron.Entities.EntityDatabase;
+import nz.nightwind.Cauldron.Entities.Exceptions.EntityCollectionAppendFailed;
 import nz.nightwind.Cauldron.Entities.Exceptions.ObjectMissingComparator;
 import nz.nightwind.Cauldron.Entities.Interior.Business;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,7 @@ public class EntityController {
     }
 
     @PostMapping("/add")
-    public String addEntitySubmit(@ModelAttribute BusinessEntityForm entity, Model model) throws ObjectMissingComparator {
+    public String addEntitySubmit(@ModelAttribute BusinessEntityForm entity, Model model) throws ObjectMissingComparator, EntityCollectionAppendFailed {
         model.addAttribute("ent", entity);
 
         System.out.println("\nAdded Entity Name: " + entity.getName());
