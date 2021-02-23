@@ -15,7 +15,7 @@
 </form>
 
 <ol th:each="b : ${businesses}">
-    <li th:text="${b.getName()}"></li>
+    <li th:text="${b.getName() + '-' + b.getBusinessType().getLabel()}"></li>
 </ol>
 
 </body>

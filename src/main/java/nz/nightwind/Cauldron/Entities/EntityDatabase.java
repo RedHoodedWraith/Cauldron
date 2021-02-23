@@ -25,25 +25,38 @@ public class EntityDatabase {
     }
 
     public static void addNewBusiness(BusinessEntityForm form) throws EntityCollectionAppendFailed {
-        if(form == null){
-            throw new NullPointerException("Form Object is Null");
-        }
-
-        int preSize = internalBusinesses.size();
-        if(addNewBusinessReturnID(form) <= preSize) {
-            throw new EntityCollectionAppendFailed(form);
-        }
+        addNewBusinessReturnID(form);
     }
 
-    public static int addNewBusinessReturnID(BusinessEntityForm form){
-        try {
-            if(form != null && internalBusinesses.add(form.generate())){
-                return internalBusinesses.size()-1;
-            }
-        } catch (UnsupportedEntity unsupportedEntity) {
-            unsupportedEntity.printStackTrace();
+    public static int addNewBusinessReturnID(BusinessEntityForm form) throws EntityCollectionAppendFailed {
+        boolean formAdd;
+
+        // Saves the Business Collection size before adding new object
+        int preSize = internalBusinesses.size();
+
+        // Null Object Checker
+        if(form == null){
+            throw new EntityCollectionAppendFailed(new NullPointerException("Form Object is Null"));
         }
-        return internalBusinesses.size();
+
+        // Attempts to Convert Form to Business Object & Add Business Object to Collection
+        // Throws Exception if that failed
+        try {
+            formAdd = internalBusinesses.add(form.generate());
+        } catch (UnsupportedEntity unsupportedEntity) {
+            throw new EntityCollectionAppendFailed(form, unsupportedEntity);
+        }
+
+        // Saves the Business Collection size after adding new object
+        int postSize = internalBusinesses.size();
+
+        // Throws an Exception if Business Object failed to add to Collection
+        if(!formAdd || preSize >= postSize){
+            throw new EntityCollectionAppendFailed(form, postSize, preSize);
+        }
+
+        // Returns the index of the Business Object that was just added
+        return postSize-1;
     }
 
     public static List<Business> getBusinesses(){
